@@ -962,6 +962,7 @@ KBUILD_RUSTFLAGS += $(rustflags64-y)
 
 ifdef CONFIG_CC_OPTIMIZE_FOR_PERFORMANCE
 KBUILD_CFLAGS += -O3
+KBUILD_CFLAGS += $(call cc-option, -fno-tree-loop-vectorize)
 KBUILD_RUSTFLAGS += -Copt-level=2
 else ifdef CONFIG_CC_OPTIMIZE_FOR_SIZE
 KBUILD_CFLAGS += -Os
