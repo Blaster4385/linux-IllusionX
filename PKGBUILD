@@ -20,24 +20,7 @@ export KBUILD_BUILD_HOST=archlinux
 export KBUILD_BUILD_USER=$pkgbase
 export KBUILD_BUILD_TIMESTAMP="$(date -Ru${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EPOCH})"
 
-export TC="$(pwd)/neutron-clang/bin"
-export PATH="$TC:${PATH}"
-
 FLAGS=(
-    LLVM=1
-    LLVM_IAS=1
-    CC="$TC"/clang
-    AR="$TC"/llvm-ar
-    LD="$TC"/ld.lld
-    NM="$TC"/llvm-nm
-    STRIP="$TC"/llvm-strip
-    OBJCOPY="$TC"/llvm-objcopy
-    OBJDUMP="$TC"/llvm-objdump
-    OBJSIZE="$TC"/llvm-size
-    HOSTCC="$TC"/clang
-    HOSTCXX="$TC"/clang++
-    HOSTAR="$TC"/llvm-ar
-    HOSTLD="$TC"/ld.lld
 )
 
 prepare() {
